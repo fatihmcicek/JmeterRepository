@@ -1,0 +1,35 @@
+JMeter Kurulum ve Kullanım Kılavuzu
+
+1. Kurulum
+Apache JMeter'ı indirmek için şu adresten derlenmiş sürümü edinin. (Windows için .zip, Linux için .tgz)
+En iyi performansı elde etmek için Java 11 sürümünü kurun.
+
+2. Çalıştırma
+Windows:
+Grafik arayüz (GUI) modunda JMeter'ı çalıştırmak için ..\apache-jmeter-5.6.3\bin\ApacheJMeter.jar dosyasını kullanabilirsiniz.
+Komut istemi üzerinden ..\apache-jmeter-5.6.3\bin\jmeter komutunu kullanarak başlatabilirsiniz.
+Linux ve Mac:
+..\apache-jmeter-5.6.3\bin\.jmeter.sh komutunu kullanarak başlatın.
+
+3. Kayıt
+Mobil ve web servislerini kaydetmek için File - Templates - Record seçeneğini kullanarak bir şablon belirleyin.
+HTTP(S) Test Script Recorder'ı Ctrl + T kısayoluyla etkinleştirin.
+Varsayılan olarak 8888 portunu kullanabilirsiniz.
+Okunabilir kayıtlar için bir Ön Ek belirleyin.
+HTTP(S) Test Script Recorder ekranında, JMeter tarafından bir sertifika oluşturmak için "Start" düğmesine tıklayın. Sertifika 7 gün geçerlidir ve ..\apache-jmeter-5.6.3\bin klasöründe ApacheJMeterTemporaryRootCA adıyla oluşturulur.
+Oluşturulan sertifikayı kaydedilecek cihaza (iOS) iletmek için uygun bir yöntem kullanın (örneğin, WhatsApp, Mail).
+
+4. Sertifika Ayarları
+iOS cihazınıza sertifikayı indirdikten sonra, dosyalardan sertifikayı profil olarak indirin (Sertifikaya tıkladığınızda otomatik olarak indirilir).
+Ayarlar ekranında, Profil İndirildi bölümünde indirilen profili seçin. Profili yüklemek için gerekli adımları izleyin (Yükle - Şifre - Yükle - Yükle - Bitti). Bu adımlardan sonra sertifika cihaza yüklenmiş olacaktır.
+Sonraki adımda, Ayarlar ekranında, "Genel - Hakkımda - Sertifika Güven Ayarları"na gidin. Burada, yüklediğiniz sertifikanın anahtarı varsayılan olarak kapalı olacaktır. Anahtarı etkinleştirin ve güvenilirliği onaylayın.
+
+5. Proxy Ayarları
+iOS cihazınız ile JMeter'ın çalıştığı bilgisayar aynı ağa bağlı olmalıdır.
+Bilgisayarınızın ağ bağlantısının IP adresini öğrenin.
+Windows için: Komut istemine ipconfig yazarak IPv4 Adresini bulun (Örnek: 10.1.10.191).
+Linux ve Mac için: Terminalde ifconfig yazarak inet adresini bulun (Örnek: 10.1.10.191).
+iOS cihazınızdan WiFi ayarlarına gidin. Bağlı olduğunuz WiFi ağının proxy ayarlarını elle yapılandırın.
+Proxy ayarlarını Ayarlar - Elle - Sunucu: 10.1.10.191, Port: 8888 olarak belirleyin ve kaydedin.
+Artık internet üzerinde herhangi bir işlem yapmayın.
+JMeter'da "Start" düğmesine bastıktan sonra, mobil cihazınızda istediğiniz işlemleri gerçekleştirebilirsiniz. Yapılan tüm işlemlerin servis kayıtları Recorder Controller altında belirtilen ön ek ile saklanacaktır. Ayrıca, istek ve yanıtları View Results Tree bölümünde takip edebilirsiniz.
